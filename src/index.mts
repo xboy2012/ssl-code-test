@@ -1,13 +1,17 @@
+import { createReadStream } from 'node:fs'
 import { rootDir } from './core/rootDir.mjs'
 import { getMaxIncrease } from './core/getMaxIncrease.mjs'
 
+/* istanbul ignore next */
 const main = async () => {
   // You may switch among the following sample csv files.
   const filePath = rootDir + '/resources/values.csv'
   // const filePath = rootDir + '/resources/demo1.csv'
   // const filePath = rootDir + '/resources/demo2.csv'
 
-  const res = await getMaxIncrease(filePath)
+  const stream = createReadStream(filePath)
+
+  const res = await getMaxIncrease(stream)
   if (!res) {
     console.log('nil')
   } else {
@@ -16,4 +20,5 @@ const main = async () => {
   }
 }
 
+/* istanbul ignore next */
 main()

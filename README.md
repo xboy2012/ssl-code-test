@@ -20,6 +20,35 @@ $ ts-node-esm src/index.mts
 ✨  Done in 0.79s.
 ```
 
+# Test
+
+```shell
+yarn test
+```
+
+The result should show a 100% percent coverage
+```
+xboy@XBOYs-MacBook-Pro ssl-code-test % jest
+ PASS  test/getMaxIncrease.test.ts
+ PASS  test/readCSV.test.ts
+ PASS  test/parseDate.test.ts
+ PASS  test/parseValue.test.ts
+--------------------|---------|----------|---------|---------|-------------------
+File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------|---------|----------|---------|---------|-------------------
+All files           |     100 |      100 |     100 |     100 |                   
+ getMaxIncrease.mts |     100 |      100 |     100 |     100 |                   
+ parseDate.mts      |     100 |      100 |     100 |     100 |                   
+ parseValue.mts     |     100 |      100 |     100 |     100 |                   
+ readCSV.mts        |     100 |      100 |     100 |     100 |                   
+--------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 4 passed, 4 total
+Tests:       8 passed, 8 total
+Snapshots:   0 total
+Time:        1.056 s
+```
+
 # Performance
 
 The time complexity should be `O(m + n)`
