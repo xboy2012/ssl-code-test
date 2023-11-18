@@ -1,9 +1,10 @@
+import { type Readable } from 'node:stream'
 import { parseDate } from './parseDate.mjs'
 import { parseValue } from './parseValue.mjs'
 import { readCSV } from './readCSV.mjs'
 
 export const getMaxIncrease = (
-  filePath: string
+  stream: Readable
 ): Promise<[string, number] | undefined> => {
   return new Promise<[string, number] | undefined>((resolve) => {
     const nameSet = new Set<string>()
@@ -71,6 +72,6 @@ export const getMaxIncrease = (
       }
     }
 
-    readCSV(filePath, onRow, onEnd)
+    readCSV(stream, onRow, onEnd)
   })
 }

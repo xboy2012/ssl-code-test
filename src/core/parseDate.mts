@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-export const parseDate = (str: string): number => {
+export const parseDate = (str: string | null | undefined): number => {
   // empty string must be invalid
   if (!str) {
     return NaN

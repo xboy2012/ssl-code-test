@@ -1,13 +1,11 @@
-import { createReadStream } from 'node:fs'
+import { type Readable } from 'node:stream'
 import { parse } from 'csv-parse'
 
 export const readCSV = (
-  filePath: string,
+  stream: Readable,
   onRow: (data: string[]) => void,
   onEnd: () => void
 ) => {
-  const stream = createReadStream(filePath)
-
   const parser = parse({
     skipEmptyLines: true,
     trim: true,

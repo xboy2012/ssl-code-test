@@ -1,4 +1,4 @@
-export const parseValue = (str: string): number => {
+export const parseValue = (str: string | null | undefined): number => {
   if (!str) {
     return NaN
   }
